@@ -36,8 +36,7 @@ else
 
   # Copy JUnit XML to path expected by Jenkins pipeline
   mkdir -p cypress/gui-test-screenshots
-  npx junit-report-merger cypress/gui-test-screenshots/junit_cypress.xml 'ui-tests-cy/gui-test-screenshots/junit_cypress-*.xml' 2>/dev/null || \
-    cp ui-tests-cy/gui-test-screenshots/junit_cypress-*.xml cypress/gui-test-screenshots/junit_cypress.xml 2>/dev/null || true
+  cp ui-tests-cy/gui-test-screenshots/junit_cypress-*.xml cypress/gui-test-screenshots/ 2>/dev/null || true
 
   cleanup
   exit "${test_exit_code}"
